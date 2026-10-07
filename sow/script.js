@@ -85,7 +85,6 @@ var synthesis = [
   ]
 ];
 // Se conserva la tabla HTML y se añade una presentación visual en tarjetas.
-// Convierte la tabla comparativa en tarjetas visuales sin eliminar la tabla original.
 var synthesisBox=document.querySelector('#sintesis .matrix');
 if(synthesisBox){
   var cards=document.createElement('div');
@@ -174,7 +173,6 @@ document.querySelectorAll('.synthesis-image img').forEach((img,i)=>{
   }
 });
 /* Referencias visuales */
-// Imágenes finales descargadas y recortadas para el proyecto.
 var referenceImages = {
   lily: '../imagenes/lirio-v2.png',
   calla: '../imagenes/cala-v2.png',
