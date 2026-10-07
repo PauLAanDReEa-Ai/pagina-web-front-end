@@ -1,3 +1,14 @@
+/*
+  Organización de los estilos SOW:
+  - .cases y .case organizan los cuatro análisis.
+  - .live-frame muestra cada web original dentro de un iframe.
+  - .analysis-text y .critical contienen análisis y reflexión.
+  - .interactive-analysis y .atelier-stage construyen los carruseles.
+  - .stage-content, .stage-controls y .stage-dots forman sus controles.
+  - .stage-photo coloca las ilustraciones decorativas detrás del texto.
+  - .matrix, .synthesis-card, .takeaways e .inspiration-grid forman el cierre.
+  - Las reglas @media ajustan columnas, tamaños e imágenes en pantallas pequeñas.
+*/
 /* Tipografías y estilos específicos del informe SOW. */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap');
 /* Hoja de estilos principal - estructura simple y separada. */
@@ -1304,7 +1315,6 @@ footer  {
     min-height: 500px;
   }
 }
-/* El carrusel no utiliza círculos decorativos gigantes. */
 .wheel-stage .atelier-stage {
   background: linear-gradient(135deg, #fff3ed, #f3d8de 58%, #f5e6b9);
 }

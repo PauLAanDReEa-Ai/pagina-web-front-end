@@ -1,6 +1,6 @@
 // JavaScript de la página SOW / ATELIER
-// Código separado siguiendo la estructura sencilla del profesor.
 
+// Temas visuales y etiquetas accesibles de los cuatro carruseles.
 // 1. Configuración visual de los carruseles de análisis.
 // Tema visual y etiqueta de cada carrusel.
 var stageThemes = {
@@ -16,6 +16,7 @@ var labels = {
   'trevor-noah': 'Archivo de identidad · Trevor Noah',
   era: 'Jardín de capítulos · ERA Residence'
 };
+// Busca el texto de análisis que sirve como fuente de datos del carrusel.
 document.querySelectorAll('.case').forEach((card)=>{
   var source=card.querySelector('.analysis-text');
   if(!source)return;
@@ -40,6 +41,7 @@ document.querySelectorAll('.case').forEach((card)=>{
     dot.addEventListener('click',()=>show(i));
     dots.append(dot)
   });
+  // Actualiza el texto, el contador y el estado visual de los controles.
   function show(next){
     index=(next+blocks.length)%blocks.length;
     title.textContent=blocks[index].title;
@@ -54,6 +56,7 @@ document.querySelectorAll('.case').forEach((card)=>{
   stage.querySelector('.next').addEventListener('click',()=>show(index+1));
   show(0);
 });
+// Las tarjetas finales resumen la promesa, el acierto y la pregunta abierta de cada web.
 // Contenido de la síntesis final.
 var synthesis = [
   [
@@ -81,6 +84,8 @@ var synthesis = [
     'Debe mostrar mejor los datos críticos del proyecto.'
   ]
 ];
+// Se conserva la tabla HTML y se añade una presentación visual en tarjetas.
+// Convierte la tabla comparativa en tarjetas visuales sin eliminar la tabla original.
 var synthesisBox=document.querySelector('#sintesis .matrix');
 if(synthesisBox){
   var cards=document.createElement('div');
@@ -93,7 +98,9 @@ if(synthesisBox){
   });
   synthesisBox.after(cards)
 }
+// Ilustraciones SVG decorativas para la sección de aprendizajes.
 var art=[`<svg viewBox="0 0 140 120" aria-hidden="true"><ellipse cx="76" cy="72" rx="31" ry="27" fill="#fff" stroke="#c86e66" stroke-width="2"/><circle cx="54" cy="37" r="18" fill="#fff" stroke="#c86e66" stroke-width="2"/><circle cx="94" cy="38" r="18" fill="#fff" stroke="#c86e66" stroke-width="2"/><circle cx="59" cy="39" r="3" fill="#463a33"/><circle cx="88" cy="39" r="3" fill="#463a33"/><path d="M70 48q7 6 14 0M76 50v10M70 61q7 6 14 0" fill="none" stroke="#c86e66" stroke-width="2" stroke-linecap="round"/></svg>`,`<svg viewBox="0 0 140 120" aria-hidden="true"><path d="M70 116C67 90 69 66 70 50" fill="none" stroke="#82917f" stroke-width="3"/><path d="M70 76q-23-20-34 0 19 7 34 0M70 91q25-22 38-4-16 13-38 4" fill="#82917f"/><g fill="#c86e66" stroke="#fffaf2" stroke-width="2"><circle cx="70" cy="38" r="16"/><circle cx="54" cy="43" r="15"/><circle cx="86" cy="43" r="15"/><circle cx="60" cy="25" r="14"/><circle cx="80" cy="25" r="14"/></g><circle cx="70" cy="36" r="9" fill="#e5b755"/></svg>`,`<svg viewBox="0 0 140 120" aria-hidden="true"><path d="M70 8l12 35 37 1-29 22 10 37-30-21-31 21 11-37L21 44l37-1z" fill="#e5b755" stroke="#fffaf2" stroke-width="5"/><path d="M70 18v76M32 45h76" stroke="#f6e7b2" stroke-width="2" opacity=".8"/></svg>`];
+// Reflexiones críticas que se muestran debajo de cada análisis.
 var reflections={
   tiebreak:'Me quedo con una duda sencilla: ¿jugar nos ayuda a entender mejor la colección o solo consigue que pasemos más tiempo dentro? Una versión sin competición haría la propuesta más abierta.', 'white-desert':'La web habla de ciencia y cuidado, pero esas ideas aparecen después de la promesa de lujo. Me gustaría ver la huella del viaje con la misma fuerza que vemos el paisaje.', 'trevor-noah':'La página se siente cercana, aunque también convierte una persona en un catálogo de contenidos. La identidad funciona mejor cuando todavía deja espacio para la espontaneidad.', era:'La estética vende muy bien la idea de hogar, pero la información importante no debería quedar escondida detrás de las vistas y las flores.'
 };
@@ -107,6 +114,7 @@ document.querySelectorAll('.takeaways article').forEach((card,i)=>{
   artBox.innerHTML=art[i];
   card.prepend(artBox)
 });
+// Rutas de las imágenes usadas en portada, carruseles y síntesis.
 var flowerImage='../imagenes/cala-v2.png';
 var starImage='../imagenes/tulipanes-v2.png';
 var coverPhoto=document.createElement('div');
@@ -165,7 +173,8 @@ document.querySelectorAll('.synthesis-image img').forEach((img,i)=>{
     img.alt='Flores botánicas'
   }
 });
-/* Referencias visuales elegidas de los pins compartidos: cada imagen se usa una sola vez. */
+/* Referencias visuales */
+// Imágenes finales descargadas y recortadas para el proyecto.
 var referenceImages = {
   lily: '../imagenes/lirio-v2.png',
   calla: '../imagenes/cala-v2.png',

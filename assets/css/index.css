@@ -1,3 +1,12 @@
+/*
+  Organización de la hoja base:
+  - :root reúne colores, tipografías y medidas reutilizables.
+  - El reset y body fijan el comportamiento general del documento.
+  - .wrap, .skip y .site-header controlan ancho, accesibilidad y cabecera.
+  - .hero, .cover e .intro construyen las zonas iniciales.
+  - .section, .method, .band y .sources dan forma al contenido común.
+  - Las reglas @media adaptan la página a tablet y móvil.
+*/
 /* Variables y estilos base compartidos por la página. */
 :root {
   --night:#111820;
